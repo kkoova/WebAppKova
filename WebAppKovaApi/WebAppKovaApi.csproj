@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WebAppKovaApi.Context\WebAppKovaApi.Context.csproj" />
+    <ProjectReference Include="..\WebAppKovaApi.PackingListServises.Contracts\WebAppKovaApi.PackingListServises.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
