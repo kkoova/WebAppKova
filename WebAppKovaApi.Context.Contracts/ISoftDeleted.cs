@@ -3,7 +3,7 @@
     /// <summary>
     /// Мягкое удаление
     /// </summary>
-    public class ISoftDeleted
+    public interface ISoftDeleted
     {
         public DateTimeOffset? Deleted { get; set; }
     }

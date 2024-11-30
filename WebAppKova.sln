@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppKovaApi", "WebAppKovaApi\WebAppKovaApi.csproj", "{071C39BA-2335-44DA-A36F-65A71F70778E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppKovaApi", "WebAppKovaApi\WebAppKovaApi.csproj", "{071C39BA-2335-44DA-A36F-65A71F70778E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppKovaApi.Contracts", "WebAppKovaApi.Contracts\WebAppKovaApi.Contracts.csproj", "{385879DF-D4F0-4EAD-A369-BC02C88D7E86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppKovaApi.Contracts", "WebAppKovaApi.Contracts\WebAppKovaApi.Contracts.csproj", "{385879DF-D4F0-4EAD-A369-BC02C88D7E86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppKovaApi.Context", "WebAppKovaApi.Context\WebAppKovaApi.Context.csproj", "{C6DB6EEC-4AFD-4252-9B1D-955B7A514695}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppKovaApi.Context", "WebAppKovaApi.Context\WebAppKovaApi.Context.csproj", "{C6DB6EEC-4AFD-4252-9B1D-955B7A514695}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppKovaApi.Contracts.Configurations", "WebAppKovaApi.Contracts.Configurations\WebAppKovaApi.Contracts.Configurations.csproj", "{A0FDDB07-7673-4126-B18A-67E49FEDE556}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppKovaApi.Contracts.Configurations", "WebAppKovaApi.Contracts.Configurations\WebAppKovaApi.Contracts.Configurations.csproj", "{A0FDDB07-7673-4126-B18A-67E49FEDE556}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppKovaApi.Context.Contracts", "WebAppKovaApi.Context.Contracts\WebAppKovaApi.Context.Contracts.csproj", "{19376BBA-BF19-4A45-B2D0-BCC5F5FA03ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppKovaApi.Context.Contracts", "WebAppKovaApi.Context.Contracts\WebAppKovaApi.Context.Contracts.csproj", "{19376BBA-BF19-4A45-B2D0-BCC5F5FA03ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppKovaApi.PackingListServises", "WebAppKovaApi.PackingListServises\WebAppKovaApi.PackingListServises.csproj", "{3A661D84-25DA-4DCA-88DE-A37B8B59A121}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppKovaApi.PackingListServises.Contracts", "WebAppKovaApi.PackingListServises.Contracts\WebAppKovaApi.PackingListServises.Contracts.csproj", "{7D611222-B4AC-4BDB-A0E6-123F6E658DDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{19376BBA-BF19-4A45-B2D0-BCC5F5FA03ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19376BBA-BF19-4A45-B2D0-BCC5F5FA03ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19376BBA-BF19-4A45-B2D0-BCC5F5FA03ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A661D84-25DA-4DCA-88DE-A37B8B59A121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A661D84-25DA-4DCA-88DE-A37B8B59A121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A661D84-25DA-4DCA-88DE-A37B8B59A121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A661D84-25DA-4DCA-88DE-A37B8B59A121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D611222-B4AC-4BDB-A0E6-123F6E658DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D611222-B4AC-4BDB-A0E6-123F6E658DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D611222-B4AC-4BDB-A0E6-123F6E658DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D611222-B4AC-4BDB-A0E6-123F6E658DDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

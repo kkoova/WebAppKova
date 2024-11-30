@@ -1,6 +1,6 @@
 ﻿namespace WebAppKovaApi.Context.Contracts
 {
-    public class IAuditableEntity
+    public interface IAuditableEntity
     {
         /// <summary>
         /// Дата создания

@@ -5,7 +5,7 @@ namespace WebAppKovaApi.Contracts
     /// <summary>
     /// Поставщик
     /// </summary>
-    public class Supplier : IAuditableEntity, ISoftDeleted
+    public class Supplier : ISoftDeleted, IAuditableEntity
     {
         /// <summary>
         /// Идентификатор
@@ -18,7 +18,7 @@ namespace WebAppKovaApi.Contracts
         public string Name { get; set; }
 
         /// <summary>
-        /// Опиcание
+        /// Описание
         /// </summary>
         public string Description { get; set; }
 
@@ -26,10 +26,9 @@ namespace WebAppKovaApi.Contracts
         public DateTimeOffset CreatedAt { get; set; }
 
         /// <inheritdoc cref="IAuditableEntity.UpdatedAt"/>
-        public DataMisalignedException UpdatedAt { get; set; }
+        public DateTimeOffset UpdatedAt { get; set; }
 
         /// <inheritdoc cref="ISoftDeleted.Deleted"/>
         public DateTimeOffset? Deleted { get; set; }
-
     }
 }
