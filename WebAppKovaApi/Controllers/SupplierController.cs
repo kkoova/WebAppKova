@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebAppKovaApi.Models;
 using WebAppKovaApi.PackingListServises.Contracts;
 using WebAppKovaApi.PackingListServises.Contracts.Models;
+using WebAppKovaApi.Prodices;
 
 namespace WebAppKovaApi.Controllers
 {
@@ -16,15 +17,18 @@ namespace WebAppKovaApi.Controllers
     {
         private readonly IMapper mapper;
         private readonly ISupplierServise supplierServise;
+        private readonly ISupplierValidationServise supplierValidationServise;
 
         /// <summary>
         /// ctor
         /// </summary>
         public SupplierController(IMapper mapper, 
-            ISupplierServise supplierServise)
+            ISupplierServise supplierServise,
+            ISupplierValidationServise supplierValidationServise)
         {
             this.supplierServise = supplierServise;
             this.mapper = mapper;
+            this.supplierValidationServise = supplierValidationServise;
         }
 
         /// <summary>
@@ -44,12 +48,12 @@ namespace WebAppKovaApi.Controllers
         /// </summary>
         /// api/supplier/guid
         [HttpGet("{id:guid}")]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProdusesNotFoundAtribute()]
         [ProducesResponseType(typeof(SupplierApiModel), StatusCodes.Status200OK)]
         public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
         {
             var result = await supplierServise.Get(id, cancellationToken);
-            return Ok(mapper.Map<>);
+            return Ok(mapper.Map<SupplierApiModel>(result));
         }
 
         /// <summary>
@@ -57,9 +61,11 @@ namespace WebAppKovaApi.Controllers
         /// </summary>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(ErrorValidationModel), StatusCodes.Status406NotAcceptable)]
         public async Task<IActionResult> Add(AddSupplierApiModel model, CancellationToken cancellationToken)
         {
             var entity = mapper.Map<AddSupplierModel>(model);
+            supplierValidationServise.Validate(model);
             await supplierServise.Add(entity, cancellationToken);
             return NoContent();
         }
@@ -68,8 +74,9 @@ namespace WebAppKovaApi.Controllers
         /// Редактирование поставщика с указанным идетентификатором
         /// </summary>
         [HttpPut("{id:guid}")]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorValidationModel), StatusCodes.Status406NotAcceptable)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProdusesNotFoundAtribute()]
         public async Task<IActionResult> Edit(
             [FromRoute] Guid id,
             [FromBody] AddSupplierApiModel request,
@@ -86,7 +93,7 @@ namespace WebAppKovaApi.Controllers
         /// Удаление поставщика с указанным идетентификатором
         /// </summary>
         [HttpDelete("{id:guid}")]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProdusesNotFoundAtribute()]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Delete(
             Guid id,

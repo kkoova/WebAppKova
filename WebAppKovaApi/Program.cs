@@ -22,6 +22,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(ApiProfile), typeof(SupplierSeviseProfile));
 builder.Services.AddScoped<ISupplierServise, SupplerServise>();
 
+builder.Services.AddSingleton<ISupplierValidationServise, SupplierValidationServise>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

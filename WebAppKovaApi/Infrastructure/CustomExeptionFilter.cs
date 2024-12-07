@@ -16,7 +16,7 @@ namespace WebAppKovaApi.Infrastructure
         /// </summary>
         public void OnException(ExceptionContext context)
         {
-            if(context.Exception is SupplierException exception)
+            if (context.Exception is SupplierException exception)
             {
                 switch (exception)
                 {
@@ -25,6 +25,23 @@ namespace WebAppKovaApi.Infrastructure
                         {
                             Message = exception.Message,
                             ErrorCode = StatusCodes.Status404NotFound,
+                        }));
+                        break;
+                    case ValidateSupplayerException validateSupplayer:
+                        SetHandledException(context, new ObjectResult(new ErrorValidationModel
+                        {
+                            Errors = validateSupplayer.Errors.Select(x =>
+                                new KeyValuePair<string, string>(x.Item1, x.Item2))
+                        })
+                        {
+                            StatusCode = StatusCodes.Status406NotAcceptable,
+                        });
+                        break;
+                    case OperationSupplierException operationSupplierException:
+                        SetHandledException(context, new ConflictObjectResult(new ErrorModel
+                        {
+                            Message = exception.Message,
+                            ErrorCode = StatusCodes.Status409Conflict,
                         }));
                         break;
                     default:
