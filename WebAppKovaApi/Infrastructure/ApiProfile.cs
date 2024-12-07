@@ -12,6 +12,9 @@ namespace WebAppKovaApi.Infrastructure
             CreateMap<SupplierModel, SupplierApiModel>(MemberList.Destination);
 
             CreateMap<AddSupplierApiModel, AddSupplierModel>(MemberList.Destination);
+
+            CreateMap<AddSupplierApiModel, AddSupplierModel>(MemberList.Destination)
+                .ForMember(x => x.Id, opt => opt.)
         }
     }
 }

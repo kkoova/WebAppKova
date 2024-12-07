@@ -1,19 +1,26 @@
 using Microsoft.EntityFrameworkCore;
 using WebAppKovaApi.Infrastructure;
+using WebAppKovaApi.PackingListServises;
+using WebAppKovaApi.PackingListServises.Contracts;
+using WebAppKovaApi.PackingListServises.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddControllers(x =>
+{
+    x.Filters.Add<CustomExeptionFilter>();
+});
+
 builder.Services.AddControllers();
 builder.Services.AddDbContext<WebAppKovaApi.Context.AppContext>(opt =>
-opt.UseSqlServer(builder.Configuration.GetConnectionString("MyConStr")));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("MyConStr")));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddAutoMapper(typeof(ApiProfile));
-
-
+builder.Services.AddAutoMapper(typeof(ApiProfile), typeof(SupplierSeviseProfile));
+builder.Services.AddScoped<ISupplierServise, SupplerServise>();
 
 var app = builder.Build();
 

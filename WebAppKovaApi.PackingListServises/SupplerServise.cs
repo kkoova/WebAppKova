@@ -8,7 +8,7 @@ using WebAppKovaApi.PackingListServises.Infrastructure;
 namespace WebAppKovaApi.PackingListServises
 {
     /// <inheritdoc cref="ISupplierServise"/>
-    internal class SupplerServise : ISupplierServise
+    public class SupplerServise : ISupplierServise
     {
         private readonly  Context.AppContext appContext;
         private readonly IMapper mapper;
@@ -60,6 +60,7 @@ namespace WebAppKovaApi.PackingListServises
 
             appContext.Suppliers.Update(result);
             await appContext.SaveChangesAsync(cancellationToken);
+            return NoContent();
         }
 
         public async Task<SupplierModel> Get(Guid id, CancellationToken cancellationToken)

@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using WebAppKovaApi.Contracts;
 using WebAppKovaApi.Models;
 using WebAppKovaApi.PackingListServises.Contracts;
 using WebAppKovaApi.PackingListServises.Contracts.Models;
-using WebAppKovaApi.PackingListServises.Infrastructure;
 
 namespace WebAppKovaApi.Controllers
 {
@@ -21,7 +18,7 @@ namespace WebAppKovaApi.Controllers
         private readonly ISupplierServise supplierServise;
 
         /// <summary>
-        /// 
+        /// ctor
         /// </summary>
         public SupplierController(IMapper mapper, 
             ISupplierServise supplierServise)
@@ -51,15 +48,8 @@ namespace WebAppKovaApi.Controllers
         [ProducesResponseType(typeof(SupplierApiModel), StatusCodes.Status200OK)]
         public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
         {
-            try
-            {
-                var result = await supplierServise.Get(id, cancellationToken);
-                return Ok(mapper.Map<SupplierApiModel>(result));
-            }
-            catch (NotFoundSupplierException e)
-            {
-                return NotFound(e.Message);
-            }
+            var result = await supplierServise.Get(id, cancellationToken);
+            return Ok(mapper.Map<>);
         }
 
         /// <summary>
@@ -82,22 +72,13 @@ namespace WebAppKovaApi.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Edit(
             [FromRoute] Guid id,
-            [FromBody] AddSupplierApiModel model,
+            [FromBody] AddSupplierApiModel request,
             CancellationToken cancellationToken)
         {
-            var result = await appContext.Suppliers.FirstOrDefaultAsync(
-                x => x.Id == id && x.Deleted == null,
-                cancellationToken);
-            if (result == null)
-            {
-                return NotFound();
-            }
-            result.Name = model.Name;
-            result.Description = model.Description;
-            result.UpdatedAt = DateTimeOffset.Now;
+            var model = mapper.Map<SupplierModel>(request);
+            model.Id = id;
 
-            appContext.Suppliers.Update(result);
-            await appContext.SaveChangesAsync(cancellationToken);
+            await supplierServise.Edit(model, cancellationToken);
             return NoContent();
         }
 
@@ -111,17 +92,8 @@ namespace WebAppKovaApi.Controllers
             Guid id,
             CancellationToken cancellationToken)
         {
-            var result = await appContext.Suppliers.FirstOrDefaultAsync(
-                x => x.Id == id && x.Deleted == null,
-                cancellationToken);
-            if (result == null)
-            {
-                return NotFound();
-            }
 
-            result.Deleted = DateTimeOffset.Now;
-            appContext.Suppliers.Update(result);
-            await appContext.SaveChangesAsync(cancellationToken);
+            await supplierServise.Delete(id, cancellationToken);
             return NoContent();
         }
     }

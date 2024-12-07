@@ -1,10 +1,8 @@
-﻿using WebAppKovaApi.PackingListServises.Exception;
-
-namespace WebAppKovaApi.PackingListServises.Infrastructure
+﻿namespace WebAppKovaApi.PackingListServises.Exceptions
 {
     public class NotFoundSupplierException : SupplierException
     {
-        public NotFoundSupplierException(string message) 
+        public NotFoundSupplierException(string message)
             : base(message)
         {
 
