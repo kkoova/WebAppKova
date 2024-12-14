@@ -13,9 +13,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppKovaApi.Contracts.Con
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppKovaApi.Context.Contracts", "WebAppKovaApi.Context.Contracts\WebAppKovaApi.Context.Contracts.csproj", "{19376BBA-BF19-4A45-B2D0-BCC5F5FA03ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppKovaApi.PackingListServises", "WebAppKovaApi.PackingListServises\WebAppKovaApi.PackingListServises.csproj", "{3A661D84-25DA-4DCA-88DE-A37B8B59A121}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppKovaApi.PackingListServises", "WebAppKovaApi.PackingListServises\WebAppKovaApi.PackingListServises.csproj", "{3A661D84-25DA-4DCA-88DE-A37B8B59A121}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppKovaApi.PackingListServises.Contracts", "WebAppKovaApi.PackingListServises.Contracts\WebAppKovaApi.PackingListServises.Contracts.csproj", "{7D611222-B4AC-4BDB-A0E6-123F6E658DDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppKovaApi.PackingListServises.Contracts", "WebAppKovaApi.PackingListServises.Contracts\WebAppKovaApi.PackingListServises.Contracts.csproj", "{7D611222-B4AC-4BDB-A0E6-123F6E658DDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppKovaApi.PackingListServises.Tests", "WebAppKovaApi.PackingListServises.Tests\WebAppKovaApi.PackingListServises.Tests.csproj", "{0F49F46E-05E7-4459-B871-3F3921F16D17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiKovaApi.Common", "WebApiKovaApi.Common\WebApiKovaApi.Common.csproj", "{90726B94-5999-4EC6-9DFC-19FC2620F655}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiKovaApi.Repositories", "WebApiKovaApi.Repositories\WebApiKovaApi.Repositories.csproj", "{88446B0A-38E4-4B5B-A445-4202DB669E38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiKovaApi.Repositories.Contracts", "WebApiKovaApi.Repositories.Contracts\WebApiKovaApi.Repositories.Contracts.csproj", "{00C1DA32-45BB-443B-A9DD-5F69D7AA6DEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiKovaApi.Repositores.Tests", "WebApiKovaApi.Repositores.Tests\WebApiKovaApi.Repositores.Tests.csproj", "{1D322C46-3CAD-4B13-8084-72C857374020}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +61,26 @@ Global
 		{7D611222-B4AC-4BDB-A0E6-123F6E658DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D611222-B4AC-4BDB-A0E6-123F6E658DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D611222-B4AC-4BDB-A0E6-123F6E658DDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F49F46E-05E7-4459-B871-3F3921F16D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F49F46E-05E7-4459-B871-3F3921F16D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F49F46E-05E7-4459-B871-3F3921F16D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F49F46E-05E7-4459-B871-3F3921F16D17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90726B94-5999-4EC6-9DFC-19FC2620F655}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90726B94-5999-4EC6-9DFC-19FC2620F655}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90726B94-5999-4EC6-9DFC-19FC2620F655}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90726B94-5999-4EC6-9DFC-19FC2620F655}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88446B0A-38E4-4B5B-A445-4202DB669E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88446B0A-38E4-4B5B-A445-4202DB669E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88446B0A-38E4-4B5B-A445-4202DB669E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88446B0A-38E4-4B5B-A445-4202DB669E38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00C1DA32-45BB-443B-A9DD-5F69D7AA6DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C1DA32-45BB-443B-A9DD-5F69D7AA6DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C1DA32-45BB-443B-A9DD-5F69D7AA6DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00C1DA32-45BB-443B-A9DD-5F69D7AA6DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D322C46-3CAD-4B13-8084-72C857374020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D322C46-3CAD-4B13-8084-72C857374020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D322C46-3CAD-4B13-8084-72C857374020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D322C46-3CAD-4B13-8084-72C857374020}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

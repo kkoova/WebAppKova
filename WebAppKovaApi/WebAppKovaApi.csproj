@@ -11,6 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WebApiKovaApi.Common\WebApiKovaApi.Common.csproj" />
+    <ProjectReference Include="..\WebApiKovaApi.Repositories.Contracts\WebApiKovaApi.Repositories.Contracts.csproj" />
+    <ProjectReference Include="..\WebApiKovaApi.Repositories\WebApiKovaApi.Repositories.csproj" />
     <ProjectReference Include="..\WebAppKovaApi.Context\WebAppKovaApi.Context.csproj" />
     <ProjectReference Include="..\WebAppKovaApi.PackingListServises\WebAppKovaApi.PackingListServises.csproj" />
   </ItemGroup>

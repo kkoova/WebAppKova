@@ -5,11 +5,9 @@ namespace WebAppKovaApi.Contracts
     /// <summary>
     /// Поставщик
     /// </summary>
-    public class Supplier : ISoftDeleted, IAuditableEntity
+    public class Supplier : ISoftDeleted, IAuditableEntity, IEntityWhihId
     {
-        /// <summary>
-        /// Идентификатор
-        /// </summary>
+        /// <inheritdoc cref="Id"/>
         public Guid Id { get; set; }
 
         /// <summary>
